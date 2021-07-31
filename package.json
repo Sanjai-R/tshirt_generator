@@ -11,8 +11,6 @@
     "react": "^17.0.2",
     "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
-    "react-draggable": "^4.4.3",
-    "react-file-base64": "^1.0.3",
     "react-redux": "^7.2.4",
     "react-rnd": "^10.3.4",
     "react-router-dom": "^5.2.0",

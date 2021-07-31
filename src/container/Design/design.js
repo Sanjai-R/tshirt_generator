@@ -1,17 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./design.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import Fab from "@material-ui/core/Fab";
 import PallateButton from "../../components/PallateButtons/PallateButton";
+import Draggabledesign from "../../components/Draggabledesign/Draggabledesign";
 import DownloadIcon from "@material-ui/icons/GetApp";
-import { Rnd } from "react-rnd";
 function Design({ type, design }) {
   const Designs = useSelector((state) => state.settings);
-  const [x, setX] = useState(0);
-  const border = useSelector((state) => state.settings.border);
-  const [y, setY] = useState(0);
-  const [width, setWidth] = useState(type === "Hoodie" ? 250 : 300);
-  const [height, setHeight] = useState(type === "Hoodie" ? 250 : 300);
   const color = useSelector((state) => state.settings.color);
   const tshirt = `/Images/Tshirt/${color}.png`;
   const dispatch = useDispatch();
@@ -24,46 +19,12 @@ function Design({ type, design }) {
           alt="Download Free High quality Blank T Shirt Png Transparent Images"
           className={styles.bg_tshirt}
         />
-
-        <Rnd
-          size={{ width: width, height: height }}
-          position={{ x: x, y: y }}
-          onDragStop={(e, d) => {
-            setX(d.x);
-            setY(d.y);
-          }}
-          onResizeStop={(e, direction, ref, delta, position) => {
-            setWidth(ref.style.width);
-            setHeight(ref.style.height);
-          }}
-          bounds="body"
+        <div
+          className={styles.draggable}
+         
         >
-          {design === "text" ? (
-            <h3
-              className={styles.des_txt}
-              style={{
-                fontSize: `${Designs.textSize}px`,
-                float: "left",
-                color: `${Designs.textColor}`,
-                fontFamily: `${Designs.fontFamily}`,
-                fontWeight: `${Designs.fontWeight}`
-              }}
-            >
-              {Designs.text}
-            </h3>
-          ) : (
-            <img
-              src={Designs.design}
-              alt=""
-              style={{
-                width: width,
-                height: height,
-                border: border === true ? "1px solid #ddd" : "none"
-              }}
-              className={styles.design}
-            />
-          )}
-        </Rnd>
+          <Draggabledesign type={type} design={design} />
+        </div>
       </div>
 
       <PallateButton />

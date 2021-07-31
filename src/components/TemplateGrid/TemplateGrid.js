@@ -1,11 +1,7 @@
 import React from "react";
 import styles from "./TemplateGrid.module.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getType } from "../../redux/Actions/index";
-
 function TemplateGrid() {
-    const dispatch = useDispatch();
     const tshirt = `/Images/Tshirt/black.png`;
     const hoodie = `/Images/Hoodies/black.png`;
      const Apparel = ({ img, text, i }) => (
@@ -30,11 +26,7 @@ function TemplateGrid() {
              />
              <button
                className={styles.btn_add}
-               onClick={() => {
-                 if (i === "3" || i === "4") {
-                   dispatch(getType("Text"));
-                 }
-               }}
+               
              >
                <h1>{`Template ${i}`}</h1>
              </button>
@@ -46,8 +38,8 @@ function TemplateGrid() {
     <div className={styles.apparel}>
       <Apparel img={hoodie} text="Hoodie" i="1" />
       <Apparel img={tshirt} text="Tshirt" i="2" />
-      <Apparel img={hoodie} text="Hoodie" i="4" />
-      <Apparel img={tshirt} text="Tshirt" i="3" />
+      <Apparel img={hoodie} text="Hoodie" i="3" />
+      <Apparel img={tshirt} text="Tshirt" i="4" />
     </div>
   );
 }

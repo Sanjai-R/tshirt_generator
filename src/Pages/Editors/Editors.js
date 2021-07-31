@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 function Editors() {
   const { type } = useParams();
   const { design } = useParams();
+  console.log(design)
   return (
     <div className={styles.root}>
       <Settings design={design} />

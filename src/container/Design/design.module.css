@@ -10,16 +10,14 @@
   position: relative;
 }
 
-.design {
+.draggable {
+  width:400px;
+  height:400px;
   position: absolute;
-  top: 80px;
-  left: 100px;
-}
-
-.des_txt {
-  position: absolute;
-  top: 80px;
-  left: 100px;
+  top: 40px;
+  left: 40px;
+  overflow-y: hidden;
+  text-align: center;
 }
 
 .fab {
