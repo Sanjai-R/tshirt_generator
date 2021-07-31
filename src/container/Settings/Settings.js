@@ -21,14 +21,15 @@ const Settings = ({ design }) => {
     },
     Select: {
       Color: "white",
-      padding: "22px",
+      padding: "20px",
       backgroundColor: "#272727",
       border: "none",
-      outline: "none",
+      Outline: "none",
       margin: "12px 18px",
       color: "#fff",
       fontSize: "1rem",
-      width: "90%"
+      width: "100%",
+      
     },
     
   }));
@@ -39,12 +40,17 @@ const Settings = ({ design }) => {
   useEffect(() => {}, [dispatch]);
 
   const handleChange = (event, newValue) => {
-    
     dispatch({
       type: "TEXT",
       payload: { ...Settings, textSize: newValue }
     });
   };
+  const handleWeight = (event, newValue) => {
+    dispatch({
+      type: "TEXT",
+      payload: { ...Settings, fontWeight: newValue }
+    });
+  }
 
   return design === "text" ? (
     <div className={styles.root}>
@@ -71,6 +77,20 @@ const Settings = ({ design }) => {
         valueLabelDisplay="auto"
         aria-labelledby="non-linear-slider"
       />
+      <h2 className={styles.sub_title}>Font Weight</h2>
+      <Slider
+        style={{
+          margin: "12px 20px",
+          width: "90%"
+        }}
+        value={Settings.fontWeight}
+        min={100}
+        step={100}
+        max={900}
+        onChange={handleWeight}
+        valueLabelDisplay="auto"
+        aria-labelledby="non-linear-slider"
+      />
       <h2 className={styles.sub_title}>Font Style</h2>
       <FormControl className={classes.formControl}>
         <Select
@@ -82,13 +102,22 @@ const Settings = ({ design }) => {
             });
           }}
         >
-          <MenuItem value="Rajdhani" style={{ fontFamily: "Rajdhani",fontSize: "32px"}}>
+          <MenuItem
+            value="Rajdhani"
+            style={{ fontFamily: "Rajdhani", fontSize: "32px" }}
+          >
             Cursive
           </MenuItem>
-          <MenuItem value="Gvtime" style={{ fontFamily: "Rajdhani",fontSize: "32px "}}>
+          <MenuItem
+            value="Gvtime"
+            style={{ fontFamily: "Rajdhani", fontSize: "32px " }}
+          >
             Gvtime
           </MenuItem>
-          <MenuItem value="Signature" style={{ fontFamily: "Signature",fontSize: "32px "}}>
+          <MenuItem
+            value="Signature"
+            style={{ fontFamily: "Signature", fontSize: "32px " }}
+          >
             Signature
           </MenuItem>
         </Select>

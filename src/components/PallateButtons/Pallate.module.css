@@ -1,0 +1,25 @@
+.color_btn {
+  margin: 12px;
+  padding: 4px;
+  border: none;
+  width: 35px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.colors {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  background-color: #121212;
+  height: 260px;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+@media screen and (max-width: 868px) {
+  .colors {
+    flex-direction: row;
+    margin: 15px 15px;
+    overflow: scroll;
+    height: 70px;
+  }
+}
