@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
-import { colors } from "../../Data/color";
+import { colors } from "../../Assets/Data/color";
 import styles from "./Pallate.module.css";
 function PallateButton() {
     const Designs = useSelector((state) => state.settings);

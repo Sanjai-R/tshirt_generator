@@ -7,7 +7,7 @@ function Home() {
     <div className={styles.root}>
       <div className={styles.logo}>
         <h1>
-          <span>Design</span> <span>tshirt</span>
+          <span>Design</span> tshirt
         </h1>
       </div>
       <h1 style={{ marginTop: "32px" }}>Choose your Design</h1>

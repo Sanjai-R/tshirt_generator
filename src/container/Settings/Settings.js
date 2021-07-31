@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import styles from "./Settings.module.css";
-import { modals } from "../../Data/design";
+import { modals } from "../../Assets/Data/design";
 import { getDesign } from "../../redux/Actions/index";
 import {
   Select,

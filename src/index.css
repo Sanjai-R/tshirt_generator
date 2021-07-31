@@ -7,15 +7,15 @@
 }
 @font-face {
   font-family: 'Rajdhani';
-  src: local('Rajdhani'), url(./fonts/Lemon.ttf) format('truetype');
+  src: local('Rajdhani'), url(./Assets/fonts/Lemon.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Gvtime';
-  src: local('Gvtime'), url(./fonts/Gvtime.otf) format('truetype');
+  src: local('Gvtime'), url(./Assets/fonts/Gvtime.otf) format('truetype');
 }
 @font-face {
   font-family: 'Signature';
-  src: local('Signature'), url(./fonts/Signature.ttf) format('truetype');
+  src: local('Signature'), url(./Assets/fonts/Signature.ttf) format('truetype');
 }
 ::-webkit-scrollbar {
     display: none;
