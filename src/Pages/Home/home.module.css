@@ -1,0 +1,37 @@
+.root {
+  margin: 32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-evenly
+}
+.banner {
+  height: 400px;
+  
+}
+.apparel{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top:15px;
+}
+.container {
+  background-color: #6f6fbb;
+  width: 300px;
+  margin:16px;
+  transition: transform 0.5s ease-in-out;
+}
+.img_ctn {
+  width: 200px;
+  height: 300px;
+  margin-left: 50px;
+}
+.btn_add{
+    width: 100%;
+    cursor: pointer;
+    padding: 16px;
+}
+.container:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(1.12);
+}

@@ -1,0 +1,68 @@
+.root {
+  width: 400px;
+  display: flex;
+  margin-top:32px;
+  flex-direction: column;
+  background-color: #121212;
+}
+.input {
+  padding: 22px;
+  background-color: #272727;
+  border: none;
+  outline: none;
+  margin: 12px 20px;
+  color: #fff;
+  font-size:1rem;
+}
+.sketch{
+  margin:  12px 20px;
+ 
+}
+.title {
+  margin: 5% 25%;
+}
+.img_root {
+  width: 30%;
+  display: flex;
+  height: 90vh;
+
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  background-color: #121212;
+  overflow: scroll;
+}
+.img {
+  height: 150px;
+  width: 150px;
+}
+.img_container {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+.sub_title{
+  margin: 2% 25%;
+}
+.img_btn {
+  width: 100%;
+  cursor: pointer;
+  padding: 8px;
+}
+@media screen and (max-width: 600px) {
+.img_root{
+  height: 400px;
+  width:300px;
+}
+.root{
+  height: 400px;
+  width:300px;
+  overflow: scroll;
+}
+}
+@media screen and (max-width: 868px) {
+.img_root{
+  height: 400px;
+  width:400px;
+}
+}

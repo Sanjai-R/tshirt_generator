@@ -1,0 +1,77 @@
+.root {
+  display: flex;
+  overflow-x: scroll;
+  flex-flow: row wrap;
+  
+  justify-content: space-evenly;
+}
+.bg {
+  overflow-x: scroll;
+  margin-top: 64px;
+  position: relative;
+}
+
+.fg_design {
+  position: absolute;
+  top: 80px;
+}
+.design {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+}
+.color_btn {
+  margin: 12px;
+  padding: 4px;
+  border: none;
+  width: 35px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.des_txt {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  
+}
+.colors {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  background-color: #121212;
+  height: 260px;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+.fab {
+  position: fixed !important;
+  bottom: 20px;
+  right: 10px;
+}
+
+@media print and (orientation:landscape) {
+  body {
+    visibility: hidden;
+  }
+  .bg {
+    visibility: visible;
+    -webkit-print-color-adjust: exact;
+  }
+}
+@media screen and (max-width: 600px) {
+  
+  .bg {
+    height: 600px;
+    
+
+  }
+  
+}
+@media screen and (max-width: 868px) {
+  .colors {
+    flex-direction: row;
+    margin: 15px 15px;
+    overflow: scroll;
+    height: 80px;
+  }
+}
