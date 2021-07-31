@@ -90,8 +90,8 @@ function Design({ type,design }) {
       <Fab
         className={styles.fab}
         color="secondary"
-        onClick={ () => {
-           dispatch({
+        onClick={async () => {
+           await dispatch({
             type: "TEXT",
             payload: { ...Designs, border: false }
           });
