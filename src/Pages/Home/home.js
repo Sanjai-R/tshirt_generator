@@ -42,15 +42,15 @@ function Home() {
     </div>
   );
   return (
-    <div>
-      <div className={styles.root}>
-        <img src="/Images/banner.png" alt="banner" className={styles.banner} />
-        <div className={styles.apparel}>
-          <Apparel img={hoodie} text="Hoodie" i="1" />
-          <Apparel img={tshirt} text="Tshirt" i="2" />
-          <Apparel img={hoodie} text="Hoodie" i="4" />
-          <Apparel img={tshirt} text="Tshirt" i="3" />
-        </div>
+    <div className={styles.root}>
+ 
+      <img className={styles.brand} src="/Images/logo.png" alt="logo"/>
+      <h1 style={{marginTop:"32px"}}>Choose your Design</h1>
+      <div className={styles.apparel}>
+        <Apparel img={hoodie} text="Hoodie" i="1" />
+        <Apparel img={tshirt} text="Tshirt" i="2" />
+        <Apparel img={hoodie} text="Hoodie" i="4" />
+        <Apparel img={tshirt} text="Tshirt" i="3" />
       </div>
     </div>
   );

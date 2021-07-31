@@ -2,7 +2,6 @@
   display: flex;
   overflow-x: scroll;
   flex-flow: row wrap;
-  
   justify-content: space-evenly;
 }
 .bg {
@@ -11,10 +10,6 @@
   position: relative;
 }
 
-.fg_design {
-  position: absolute;
-  top: 80px;
-}
 .design {
   position: absolute;
   top: 80px;
@@ -32,7 +27,6 @@
   position: absolute;
   top: 80px;
   left: 100px;
-  
 }
 .colors {
   display: flex;
@@ -46,26 +40,33 @@
 .fab {
   position: fixed !important;
   bottom: 20px;
-  right: 10px;
+  right: 20px;
 }
 
-@media print and (orientation:landscape) {
+@media print {
   body {
     visibility: hidden;
   }
   .bg {
     visibility: visible;
-    -webkit-print-color-adjust: exact;
+  }
+  .bg {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: 21cm;
+    min-height: 29.7cm;
+    background-color: #ffffff !important;
+    page-break-after: always;
+    position: absolute;
+    top: 5cm;
+    left: 3cm;
   }
 }
 @media screen and (max-width: 600px) {
-  
   .bg {
     height: 600px;
-    
-
   }
-  
 }
 @media screen and (max-width: 868px) {
   .colors {

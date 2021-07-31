@@ -4,3 +4,24 @@
     justify-content: space-evenly;
     
 }
+@media print {
+  body {
+    visibility: hidden;
+  }
+  .tshirt {
+    visibility: visible;
+  }
+  .tshirt {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: 21cm;
+    min-height: 29.7cm;
+
+    page-break-after: always;
+    position: absolute;
+    top: 5cm;
+    left: 0;
+  
+  }
+}

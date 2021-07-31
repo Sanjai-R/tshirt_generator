@@ -6,6 +6,7 @@ const initialState = {
   textSize: "32",
   textColor: "white",
   fontFamily: "Oleo Script",
+  border: true
 };
 export const settingsreducer = (state=initialState, action) => {
   switch (action.type) {

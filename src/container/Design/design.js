@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { colors } from "../../Data/color";
 import styles from "./design.module.css";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 import Fab from "@material-ui/core/Fab";
+import { colors } from "../../Data/color";
 import DownloadIcon from "@material-ui/icons/GetApp";
 import { Rnd } from "react-rnd";
 function Design({ type,design }) {
   const Designs = useSelector((state) => state.settings);
   const [x, setX] = useState(0);
-  const [border, setBorder] = useState("1px solid #ddd");
+  const border = useSelector((state) => state.settings.border);
   const [y, setY] = useState(0);
   const [width, setWidth] = useState(type === "Hoodie"?250:300);
   const [height, setHeight] = useState(type === "Hoodie" ? 250 : 300);
-  const [color, setColor] = useState("black");
+  const color = useSelector((state) => state.settings.color);
   const tshirt = `/Images/Tshirt/${color}.png`;
-  
+  const dispatch = useDispatch();
   const hoodie = `/Images/Hoodies/${color}.png`;
   return (
     <div className={styles.root}>
@@ -25,12 +25,7 @@ function Design({ type,design }) {
           className={styles.bg_tshirt}
         />
 
-        <div
-          className={styles.fg_design}
-          style={{
-         
-          }}
-        >
+        
           <Rnd
             size={{ width: width, height: height }}
             position={{ x: x, y: y }}
@@ -45,16 +40,17 @@ function Design({ type,design }) {
             bounds="body"
           >
             {design === "text" ? (
-              <p
+              <h3
                 className={styles.des_txt}
                 style={{
                   fontSize: `${Designs.textSize}px`,
+                  float:"left",
                   color: `${Designs.textColor}`,
                   fontFamily: `${Designs.fontFamily}`
                 }}
               >
                 {Designs.text}
-              </p>
+              </h3>
             ) : (
               <img
                 src={Designs.design}
@@ -62,14 +58,14 @@ function Design({ type,design }) {
                 style={{
                   width: width,
                   height: height,
-                  border: border
+                  border: border === true ? "1px solid #ddd" : "none"
                 }}
                 className={styles.design}
               />
             )}
           </Rnd>
         </div>
-      </div>
+     
       <div className={styles.colors}>
         {colors.map((data, i) => (
           <div
@@ -80,8 +76,11 @@ function Design({ type,design }) {
               border: data.color === "black" ? "1px solid #fff" : "none"
             }}
             className={styles.color_btn}
-            onClick={async () => {
-              await setColor(data.color);
+            onClick={() => {
+              dispatch({
+                type: "TEXT",
+                payload: { ...Designs, color: data.color }
+              });
             }}
           >
             <p>co</p>
@@ -92,9 +91,15 @@ function Design({ type,design }) {
         className={styles.fab}
         color="secondary"
         onClick={async () => {
-          await setBorder(`1px solid transparent`);
+          await dispatch({
+            type: "TEXT",
+            payload: { ...Designs, border: false }
+          });
           window.print();
-          setBorder("1px solid #fff");
+          await dispatch({
+            type: "TEXT",
+            payload: { ...Designs, border: true }
+          });
         }}
       >
         <DownloadIcon />

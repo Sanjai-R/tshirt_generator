@@ -82,13 +82,13 @@ const Settings = ({ design }) => {
             });
           }}
         >
-          <MenuItem value="Rajdhani" style={{ fontFamily: "Rajdhani" }}>
+          <MenuItem value="Rajdhani" style={{ fontFamily: "Rajdhani",fontSize: "32px"}}>
             Cursive
           </MenuItem>
-          <MenuItem value="Gvtime" style={{ fontFamily: "Rajdhani" }}>
+          <MenuItem value="Gvtime" style={{ fontFamily: "Rajdhani",fontSize: "32px "}}>
             Gvtime
           </MenuItem>
-          <MenuItem value="Signature" style={{ fontFamily: "Signature" }}>
+          <MenuItem value="Signature" style={{ fontFamily: "Signature",fontSize: "32px "}}>
             Signature
           </MenuItem>
         </Select>

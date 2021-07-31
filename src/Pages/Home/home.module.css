@@ -1,13 +1,12 @@
 .root {
-  margin: 32px;
+
   display:flex;
   flex-direction:column;
-  justify-content:space-evenly
-}
-.banner {
-  height: 400px;
+  justify-content:space-evenly;
+  align-items:center;
   
 }
+
 .apparel{
     display:flex;
     flex-flow: row wrap;
