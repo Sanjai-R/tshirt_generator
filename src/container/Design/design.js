@@ -90,16 +90,13 @@ function Design({ type,design }) {
       <Fab
         className={styles.fab}
         color="secondary"
-        onClick={async () => {
-          await dispatch({
+        onClick={ () => {
+           dispatch({
             type: "TEXT",
             payload: { ...Designs, border: false }
           });
           window.print();
-          await dispatch({
-            type: "TEXT",
-            payload: { ...Designs, border: true }
-          });
+          
         }}
       >
         <DownloadIcon />

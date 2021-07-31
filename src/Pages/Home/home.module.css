@@ -4,9 +4,11 @@
   flex-direction:column;
   justify-content:space-evenly;
   align-items:center;
-  
+  overflow:hidden;
 }
-
+.brand{
+  width: 80%;
+}
 .apparel{
     display:flex;
     flex-flow: row wrap;
