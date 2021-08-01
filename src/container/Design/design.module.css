@@ -29,6 +29,10 @@
 @media print {
   body {
     visibility: hidden;
+    width:0;
+    height:0;
+    width: 21cm;
+    min-height: 15cm;
   }
   .bg {
     visibility: visible;
@@ -38,7 +42,7 @@
     border: initial;
     border-radius: initial;
     width: 21cm;
-    min-height: 29.7cm;
+    min-height: 15cm;
     background-color: #ffffff !important;
     page-break-after: always;
     position: absolute;
